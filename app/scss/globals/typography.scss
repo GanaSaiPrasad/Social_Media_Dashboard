@@ -1,0 +1,29 @@
+// Use the Utility Function For Styles - -
+// To Use Utility Styles we need to import Our Utilities Folder
+@use "../utilities/" as *;
+h1,
+h2,
+h3 {
+  // set the margin top to zero
+  margin-top: 0;
+  line-height: 1.1;
+}
+h1 {
+  // Default Font Size
+  font-size: rem(24);
+  margin-bottom: rem(3);
+  // Font-Size in Desktop Screen Size
+  @include breakpoint(large) {
+    font-size: rem(28);
+  }
+}
+
+h2 {
+  font-size: rem(24);
+  margin-bottom: rem(24);
+}
+a,
+a:visited,
+a:active {
+  text-decoration: none;
+}

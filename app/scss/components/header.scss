@@ -1,0 +1,33 @@
+// Use the Utility Function For Styles - -
+// To Use Utility Styles we need to import Our Utilities Folder
+@use "../utilities/" as *;
+
+// Apply Header Styles for class of header
+.header {
+  display: flex;
+  // Wraps the flex items onto a single line or multiple lines depending on space availability
+  flex-wrap: wrap;
+  // Add margin-top
+  margin-top: rem(36);
+  // Make Header & Toggle Button Align Horizontally Starting From Medium Screen Sizes
+  @include breakpoint(medium) {
+    justify-content: space-between;
+    // vertically Centered
+    align-items: center;
+  }
+  // Inherits the parent selector
+  // On Mobile Orientation Title Should take the All the Available Space
+  &__title {
+    // Take all the available width Only in Mobile Orientation Screen Size
+    width: 100%;
+    @include breakpoint(medium) {
+      width: auto;
+    }
+  }
+
+  &__subtitle {
+    font-size: rem(14);
+    font-weight: 700;
+    color: var(--text-color2);
+  }
+}

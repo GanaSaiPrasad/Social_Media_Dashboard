@@ -1,0 +1,18 @@
+@use "../utilities/" as *;
+
+.card-inner--grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  // Grid Rows Will Only Take Space That is required for the content
+  grid-template-rows: repeat(2, auto);
+  justify-items: start;
+  // Gap between the grid child elements
+  gap: rem(23);
+
+  // Targeting the facebook image tag within scope of card-inner--grid class
+  img,
+  .card__change {
+    // Overriding the Default Position
+    justify-self: end;
+  }
+}

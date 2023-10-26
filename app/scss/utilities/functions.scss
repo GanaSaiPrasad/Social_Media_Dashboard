@@ -1,0 +1,12 @@
+// Import SASS math Module to perform math operations
+@use "sass:math";
+// Function to Convert pixels into rem Units
+@function rem($pixels, $context: 16) {
+  @return (math.div($pixels, $context)) * 1rem;
+}
+
+// Actual usage of that function to apply styles
+
+// h1 {
+//   font-size: rem(30);
+// }

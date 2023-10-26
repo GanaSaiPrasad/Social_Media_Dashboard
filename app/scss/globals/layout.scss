@@ -1,0 +1,52 @@
+// To Use Utility Styles we need to import Our Utilities Folder
+@use "../utilities/" as *;
+// Purpose Of Defining Styles in Layout is to Reuse Styles By Just Adding a Class
+
+// Hold the Styles For Our Dashboard Layout
+
+// Set the max-width
+.container {
+  // Padding Only For Mobile Device Orientation
+  padding: 0 rem(25);
+  //   Max-width Of Our Container
+  max-width: rem(1110);
+  //  Center the Container Horizontally
+  //   Margin Top - Zero, (Left Right) - Auto , Margin Bottom - 46px
+  margin: 0 auto rem(46);
+  //   Setting Padding to Zero in Desktop Orientation Size(Bigger Screen Size)
+  //   Overriding the default padding provided above.
+  @include breakpoint(large) {
+    padding: 0;
+  }
+}
+
+// ReUsable Flex Styles
+// Find ReUsable Flex Component to be a Better Approach Here
+
+// .card--grid-display {
+//   // Default Styles For Any Screen Sizes
+//   display: flex;
+//   flex-direction: column;
+//   gap: rem(30);
+//   flex-wrap: wrap;
+//   align-items: center;
+//   // Style For Medium & Above Screen Sizes
+//   @include breakpoint(medium) {
+//     flex-direction: row;
+//     justify-content: center;
+//   }
+// }
+
+// Using Grid Instead Of Flex
+
+.card--grid-display {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: rem(30);
+  @include breakpoint(medium) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  @include breakpoint(large) {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}

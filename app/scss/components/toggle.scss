@@ -1,0 +1,72 @@
+// Use the Utility Function For Styles - -
+// To Use Utility Styles we need to import Our Utilities Folder
+@use "../utilities/" as *;
+// Follow the order of classes while applying styles
+.toggle {
+  // Using grid for toggle layout & its labels
+  display: grid;
+  grid-template-columns: 1fr 3rem;
+  gap: rem(12);
+  // Reset the border to none
+  border: none;
+  margin: 0;
+
+  // Accessing the Legend Element Within the Scope Of Our Toggle Class Selector
+  label {
+    font-size: rem(14);
+    font-weight: 700;
+    line-height: rem(24);
+    color: var(--toggle-text);
+  }
+  // & Will inherit the parent selector class which is toggle in our case
+  &__wrapper {
+    height: rem(24);
+    position: relative;
+  }
+  input[type="radio"] {
+    margin: 0 rem(-2) 0 rem(-2);
+    opacity: 0;
+    width: rem(24);
+    height: rem(24);
+    cursor: pointer;
+    // add background to inputs
+    // When radio element is focused (selected) add border to the toggle switcher
+    &:focus ~ .toggle__switcher {
+      border: 2px solid white;
+    }
+  }
+  // Toggle Background
+  &__background {
+    display: block;
+    position: absolute;
+    // Here in this case back-ground height is equal to height set in the parent element which is div
+    height: 100%;
+    width: 100%;
+    top: 0;
+    border-radius: rem(12);
+    background: var(--toggle-bg);
+    pointer-events: none;
+  }
+  // Our Circular Toggle  Switcher Styles
+  &__switcher {
+    position: absolute;
+    left: rem(3);
+    top: rem(3);
+    right: 100%;
+    // Again Calling Our Utility Function For Width & Height
+    width: rem(18);
+    height: rem(18);
+    border-radius: 50%;
+    background-color: var(--toggle-button-bg);
+    transition: all 150ms ease-in-out;
+  }
+
+  // Applying Style Based on Toggle Selcction
+  // ~ - Indicates Selection Of Sibling Selector
+  // Applying Style If  dark is Selected
+  // Applying Style When Toggle Switced to Dark Mode
+  #dark:checked ~ .toggle__switcher {
+    left: calc(100% - 21px);
+    right: 3px;
+  }
+}

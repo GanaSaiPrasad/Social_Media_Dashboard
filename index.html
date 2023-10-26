@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Loading Our Minified/Compiled CSS/JS Files -->
+    <link rel="stylesheet" href="dist/style.css" />
+    <!-- Add Defer Attribute to Speed up Page Loading -->
+    <script defer src="dist/script.js"></script>
+
+    <title>Frontend Mentor | [Challenge Name Here]</title>
+
+    <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+    <style>
+      .attribution {
+        font-size: 11px;
+        text-align: center;
+      }
+      .attribution a {
+        color: hsl(228, 45%, 44%);
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Header Content Of Webpage -->
+    <header class="header container">
+      <!-- Group the h1 & Followers Count Together -->
+      <div class="header__title">
+        <h1>Social Media Dashboard</h1>
+        <span class="header__subtitle">Total Followers: 23,004</span>
+      </div>
+      <!-- Theme Switching Toggle -->
+      <fieldset
+        class="header__toggle toggle"
+        aria-label="theme toggle"
+        role="radiogroup"
+      >
+        <!-- Label for our Dark mode toggle -->
+        <label for="dark"
+          >Dark Mode <span class="visually-hidden">On</span>
+        </label>
+        <!-- Toggle Button -->
+        <!-- Div is a block level element -->
+        <div class="toggle__wrapper">
+          <input type="radio" name="theme" id="light" />
+          <input type="radio" name="theme" id="dark" checked />
+          <!-- Background of Our Toggle -->
+          <span aria-hidden="true" class="toggle__background"></span>
+          <!-- Color Of Toggle Swithcer Button -->
+          <span aria-hidden="true" class="toggle__switcher"></span>
+        </div>
+        <label for="light" class="visually-hidden">Dark Mode Off </label>
+      </fieldset>
+    </header>
+    <!-- Contains the main Content of Our HTML Page -->
+    <main>
+      <!-- add class container to define the max-width of our page -->
+      <!-- Reusing Container Styles & Flex Styles -->
+      <section class="container card--grid-display">
+        <!-- Facebook Card Component -->
+        <div class="card card--facebook-border">
+          <div class="card__platform">
+            <div class="card__icon">
+              <img src="/images/icon-facebook.svg" alt="facebook-icon" />
+            </div>
+            <div class="card__username">@nathanf</div>
+          </div>
+          <!-- Card Count Indicates Followers Count & Followers Label Text -->
+          <div class="card__followers">
+            <div class="card__followers--big">1987</div>
+            <div class="card__label">Followers</div>
+          </div>
+          <div class="card__change">
+            <img src="/images/icon-up.svg" alt="up" />
+            <div class="card__change--up">12 Today</div>
+          </div>
+        </div>
+        <!-- Twitter Card Component -->
+        <div class="card card--twitter-border">
+          <div class="card__platform">
+            <div class="card__icon">
+              <img src="/images/icon-twitter.svg" alt="twitter-icon" />
+            </div>
+            <div class="card__username">@nathanf</div>
+          </div>
+          <!-- Card Count Indicates Followers Count & Followers Label Text -->
+          <div class="card__followers">
+            <div class="card__followers--big">1044</div>
+            <div class="card__label">Followers</div>
+          </div>
+          <div class="card__change card__change--up">
+            <img src="/images/icon-up.svg" alt="up" />
+            <div class="card__number">99 Today</div>
+          </div>
+        </div>
+        <!-- Instagram Card Component -->
+        <div class="card card--instagram-border">
+          <div class="card__platform">
+            <div class="card__icon">
+              <img src="/images/icon-instagram.svg" alt="instagram-icon" />
+            </div>
+            <div class="card__username">@realnathanf</div>
+          </div>
+          <!-- Card Count Indicates Followers Count & Followers Label Text -->
+          <div class="card__followers">
+            <div class="card__followers--big">11k</div>
+            <div class="card__label">Followers</div>
+          </div>
+          <div class="card__change card__change--up">
+            <img src="/images/icon-up.svg" alt="up" />
+            <div class="card__number">1099 Today</div>
+          </div>
+        </div>
+        <!-- Youtube Card Component -->
+        <div class="card card--youtube-border">
+          <div class="card__platform">
+            <div class="card__icon">
+              <img src="/images/icon-youtube.svg" alt="youtube-icon" />
+            </div>
+            <div class="card__username">Nathan F.</div>
+          </div>
+          <!-- Card Count Indicates Followers Count & Followers Label Text -->
+          <div class="card__followers">
+            <div class="card__followers--big">8239</div>
+            <div class="card__label">Subscribers</div>
+          </div>
+          <div class="card__change card__change--down">
+            <img src="/images/icon-down.svg" alt="down" />
+            <div class="card__number">144 Today</div>
+          </div>
+        </div>
+        <!-- 
+        Likes 52 2% Likes 5462 2257% Profile Views 52k 1375% Retweets 117 303%
+        Likes 507 553% Likes 107 19% Total Views 1407 12% -->
+      </section>
+      <!-- Second Grid Component -->
+      <section class="container">
+        <!-- h2 part of full width container but not part of the grid  -->
+        <h2>Overview - Today</h2>
+        <div class="card--grid-display">
+          <!-- Card Inner Grid Class For Layouting Child Items -->
+          <div class="card card-inner--grid">
+            <div class="card__subtitle">Page Views</div>
+            <img src="/images/icon-facebook.svg" alt="Facebook" />
+            <div class="card__followers card__followers--small">87</div>
+            <div class="card__change">
+              <img src="/images/icon-up.svg" alt="up" />
+              <div class="card__change--up">3%</div>
+            </div>
+          </div>
+          <div class="card card-inner--grid">
+            <div class="card__subtitle">Likes</div>
+            <img src="/images/icon-facebook.svg" alt="Facebook" />
+            <div class="card__followers card__followers--small">52</div>
+            <div class="card__change">
+              <img src="/images/icon-down.svg" alt="up" />
+              <div class="card__change--down">2%</div>
+            </div>
+          </div>
+          <div class="card card-inner--grid">
+            <div class="card__subtitle">Likes</div>
+            <img src="/images/icon-instagram.svg" alt="Instagram" />
+            <div class="card__followers card__followers--small">5462</div>
+            <div class="card__change">
+              <img src="/images/icon-up.svg" alt="up" />
+              <div class="card__change--up">2257%</div>
+            </div>
+          </div>
+          <div class="card card-inner--grid">
+            <div class="card__subtitle">Profile Views</div>
+            <img src="/images/icon-instagram.svg" alt="Instagram" />
+            <div class="card__followers card__followers--small">52k</div>
+            <div class="card__change">
+              <img src="/images/icon-up.svg" alt="up" />
+              <div class="card__change--up">1375%</div>
+            </div>
+          </div>
+          <div class="card card-inner--grid">
+            <div class="card__subtitle">Retweets</div>
+            <img src="/images/icon-twitter.svg" alt="Twitter" />
+            <div class="card__followers card__followers--small">117</div>
+            <div class="card__change">
+              <img src="/images/icon-up.svg" alt="up" />
+              <div class="card__change--up">303%</div>
+            </div>
+          </div>
+          <div class="card card-inner--grid">
+            <div class="card__subtitle">Likes</div>
+            <img src="/images/icon-twitter.svg" alt="Twitter" />
+            <div class="card__followers card__followers--small">507</div>
+            <div class="card__change">
+              <img src="/images/icon-up.svg" alt="up" />
+              <div class="card__change--up">553%</div>
+            </div>
+          </div>
+          <div class="card card-inner--grid">
+            <div class="card__subtitle">Likes</div>
+            <img src="/images/icon-youtube.svg" alt="Youtube" />
+            <div class="card__followers card__followers--small">107</div>
+            <div class="card__change">
+              <img src="/images/icon-down.svg" alt="down" />
+              <div class="card__change--down">19%</div>
+            </div>
+          </div>
+          <div class="card card-inner--grid">
+            <div class="card__subtitle">Total Views</div>
+            <img src="/images/icon-youtube.svg" alt="YouTube" />
+            <div class="card__followers card__followers--small">1407</div>
+            <div class="card__change">
+              <img src="/images/icon-down.svg" alt="down" />
+              <div class="card__change--down">12%</div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <div class="attribution">
+      Challenge by
+      <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
+        >Frontend Mentor</a
+      >. Coded by <a href="#">Your Name Here</a>.
+    </div>
+  </body>
+</html>

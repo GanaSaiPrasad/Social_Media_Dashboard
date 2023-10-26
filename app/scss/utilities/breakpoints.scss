@@ -1,0 +1,43 @@
+// 640px , 1150px,1400px
+$breakpoints-up: (
+  "medium": "40em",
+  "large": "71.875em",
+  "xlarge": "87.5em",
+);
+
+//639px,1149px,1399px
+$breakpoints-down: (
+  "small": "39.9375em",
+  "medium": "71.8125em",
+  "large": "87.4375em",
+);
+
+// A Mixin -- Faster Way To Load Media Queries
+// A Nice Way to Avoid Code Duplication & Reuse Styles (Reusable Code)
+@mixin breakpoint($size) {
+  @media (min-width: map-get($breakpoints-up,$size)) {
+    @content;
+  }
+}
+
+@mixin breakpoint-down($size) {
+  @media (max-width: map-get($breakpoints-down,$size)) {
+    @content;
+  }
+}
+
+// How our styles are applied using that mix-in breakpoint
+// those breakpoints are called inside of our element
+// h1 {
+// @include breakpoint(large){
+//     font-size: 3rem;
+// }
+// }
+
+// How an actual media query would look like for the above style
+
+// @media (min-width:64em) {
+//     h1{
+//         font-size: 3rem;
+//     }
+// }
